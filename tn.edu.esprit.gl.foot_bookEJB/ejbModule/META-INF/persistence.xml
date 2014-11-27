@@ -5,8 +5,9 @@
 	<persistence-unit name="tn.edu.esprit.gl.foot_bookEJB">
 		<jta-data-source>java:/footDS</jta-data-source>
 		<class>tn.edu.esprit.gl.foot_bookEJB.model.User</class>
+		<class>tn.edu.esprit.gl.foot_bookEJB.model.Stadium</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>
