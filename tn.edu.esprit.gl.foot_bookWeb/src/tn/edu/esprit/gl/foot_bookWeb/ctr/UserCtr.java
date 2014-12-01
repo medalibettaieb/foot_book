@@ -7,7 +7,7 @@ import javax.faces.bean.SessionScoped;
 import tn.edu.esprit.gl.foot_bookEJB.model.User;
 import tn.edu.esprit.gl.foot_bookEJB.services.interfaces.UserServicesLocal;
 
-@ManagedBean(name = "userManager")
+@ManagedBean
 @SessionScoped
 public class UserCtr {
 	// model
