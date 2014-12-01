@@ -33,4 +33,15 @@ public class StadiumServices implements StadiumServicesRemote,
 		return entityManager.createQuery(jpql).getResultList();
 	}
 
+	@Override
+	public boolean saveOrUpdate(Stadium stadium) {
+		boolean b = false;
+		try {
+			entityManager.merge(stadium);
+			b = true;
+		} catch (Exception e) {
+		}
+		return b;
+	}
+
 }

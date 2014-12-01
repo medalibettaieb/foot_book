@@ -2,6 +2,8 @@ package tn.edu.esprit.gl.foot_bookEJB.model;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -18,11 +20,14 @@ public class User implements Serializable {
 	private String login;
 	private String password;
 	private static final long serialVersionUID = 1L;
+	
+	private List<Booking> bookings;
 
 	public User() {
 		super();
 	}   
 	@Id    
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int getId() {
 		return this.id;
 	}
@@ -50,6 +55,13 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	@OneToMany(mappedBy="user")
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
 	}
    
 }

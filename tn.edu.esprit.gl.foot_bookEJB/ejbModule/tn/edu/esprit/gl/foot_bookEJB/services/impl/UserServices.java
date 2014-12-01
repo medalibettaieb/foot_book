@@ -40,4 +40,15 @@ public class UserServices implements UserServicesRemote, UserServicesLocal {
 		return userFound;
 	}
 
+	@Override
+	public boolean saveOrUpdate(User user) {
+		boolean b = false;
+		try {
+			entityManager.merge(user);
+			b = true;
+		} catch (Exception e) {
+		}
+		return b;
+	}
+
 }

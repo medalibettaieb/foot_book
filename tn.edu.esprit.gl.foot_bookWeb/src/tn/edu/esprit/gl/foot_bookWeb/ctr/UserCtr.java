@@ -19,7 +19,7 @@ public class UserCtr {
 
 	// methods
 	public String doLogin() {
-		String navigateTo = "";
+		String navigateTo = null;
 		User userFound = userServicesLocal.login(user.getLogin(),
 				user.getPassword());
 		if (userFound != null) {

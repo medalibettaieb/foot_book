@@ -8,6 +8,7 @@ import tn.edu.esprit.gl.foot_bookEJB.model.Stadium;
 
 @Local
 public interface StadiumServicesLocal {
+	boolean saveOrUpdate(Stadium stadium);
 	List<Stadium> findAllStadiums();
 
 }
